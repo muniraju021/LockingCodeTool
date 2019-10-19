@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortComLib", "SerialP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockingCodeUI", "LockingCodeUI\LockingCodeUI.csproj", "{F6A2C4FE-4436-4795-8839-5CF8CFB2CDFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lct.DataLayer", "Lct.DataLayer\Lct.DataLayer.csproj", "{E588456C-00C3-496A-8801-B09ACF4B860A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsDynamodbConnectivity", "AwsDynamodbConnectivity\AwsDynamodbConnectivity.csproj", "{A4DB3A6A-7959-4517-844B-4D00AE09436C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F6A2C4FE-4436-4795-8839-5CF8CFB2CDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6A2C4FE-4436-4795-8839-5CF8CFB2CDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6A2C4FE-4436-4795-8839-5CF8CFB2CDFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E588456C-00C3-496A-8801-B09ACF4B860A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E588456C-00C3-496A-8801-B09ACF4B860A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E588456C-00C3-496A-8801-B09ACF4B860A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E588456C-00C3-496A-8801-B09ACF4B860A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4DB3A6A-7959-4517-844B-4D00AE09436C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4DB3A6A-7959-4517-844B-4D00AE09436C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4DB3A6A-7959-4517-844B-4D00AE09436C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4DB3A6A-7959-4517-844B-4D00AE09436C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
