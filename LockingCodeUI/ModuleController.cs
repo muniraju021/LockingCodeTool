@@ -1,4 +1,5 @@
 ﻿using log4net;
+using SerialPortComLib;
 using SerialPortComLib.Handler;
 using SerialPortComLib.Services;
 using System;
@@ -13,10 +14,13 @@ namespace LockingCodeUI
     public class ModuleController
     {
         public IUnityContainer Container;
+        private ILog _logger;
 
         public void InitializeContainerClasses()
         {
-            Container = new UnityContainer();            
+            _logger = LoggingManager.GetLogger(typeof(ModuleController));
+            Container = new UnityContainer();
+            Container.RegisterInstance(_logger);
             Container.RegisterType<ISerialPortService, SerialPortService>();            
             Container.RegisterType<ILoadLockingHandler, LoadLockingCodesHandler>();
             Container.RegisterType(typeof(LoadCodes));

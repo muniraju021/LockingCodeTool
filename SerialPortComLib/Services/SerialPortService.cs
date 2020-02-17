@@ -18,15 +18,17 @@ namespace SerialPortComLib.Services
 
         public Action<string> CallBackOnDataReceived { get; set; }
                 
-        public SerialPortService()
+        public SerialPortService(ILog logger)
         {
-            _iLogger = LoggingManager.GetLogger(typeof(SerialPortService));
+            //_iLogger = LoggingManager.GetLogger(typeof(SerialPortService));
+            _iLogger = logger;
         }
 
         public void InitializeSerialPortComm(string portName, int baudrate = 9600,
             Parity parity = Parity.None, int dataBits = 8, StopBits stopBits = StopBits.One,
             Action<string> callBackOnDataReceived = null)
         {
+            _iLogger.InfoFormat($"SerialPortService: InitializeSerialPortComm - Serial Port Comm Started");
             if (_serialPort == null)
             {
                 _serialPort = new SerialPort(portName, baudrate, parity, dataBits, stopBits);
@@ -35,9 +37,14 @@ namespace SerialPortComLib.Services
                 _serialPort.ReadTimeout = serialPortReadTimeout;
                 _serialPort.DataReceived += _serialPort_DataReceived;
                 _serialPort.Open();
+
+                _iLogger.InfoFormat($"SerialPortService: InitializeSerialPortComm - Serial Port - {portName} Opened");
             }
-            
+
             this.CallBackOnDataReceived = callBackOnDataReceived;
+
+            _iLogger.InfoFormat($"SerialPortService: InitializeSerialPortComm - Serial Port Comm Completed");
+
         }
 
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
